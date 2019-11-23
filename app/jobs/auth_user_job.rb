@@ -66,10 +66,10 @@ class AuthUserJob < ApplicationJob
 		      { 
 		        "ais-accounts:getAccounts": {
 		          "scopeUsageLimit": "multiple"
-		        },
-		        "ais:getAccount": {
-		          "scopeUsageLimit": "single"
 		        }
+		      },
+		      "ais:getAccount": {
+		        "scopeUsageLimit": "single"
 		      }
 		    ],
 		    "scopeGroupType":"ais-accounts",
