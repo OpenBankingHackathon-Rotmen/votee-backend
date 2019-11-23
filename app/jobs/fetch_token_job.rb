@@ -71,19 +71,16 @@ class FetchTokenJob < ApplicationJob
 		  "client_id": "string",
 		  "refresh_token": "string",
 		  "exchange_token": "string",
-		  "scope": "string",
+		  "scope": "ais",
 		  "scope_details": {
 		    "privilegeList": [
 		      {
-		        "ais-accounts:getAccounts": {
-		          "scopeUsageLimit": "multiple"
-		        },
 		        "ais:getAccount": {
           		"scopeUsageLimit": "single"
           	}
         	}
 		    ],
-		    "scopeGroupType": "ais-accounts",
+		    "scopeGroupType": "ais",
 		    "consentId": "#{uid}",
 		    "scopeTimeLimit": "2020-11-23T16:18:07.202Z",
 		    "throttlingPolicy": "psd2Regulatory"
