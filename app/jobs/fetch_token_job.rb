@@ -66,11 +66,11 @@ class FetchTokenJob < ApplicationJob
 		    "psuContextIdentifierValue": "string"
 		  },
 		  "grant_type": "exchange_token",
-		  "exchange_token": "#{code}",
+		  "Code": "#{code}",
 		  "redirect_uri": "string",
 		  "client_id": "string",
 		  "refresh_token": "string",
-		  "exchange_token": "string",
+		  "exchange_token": "#{code}",
 		  "scope": "ais",
 		  "scope_details": {
 		    "privilegeList": [
