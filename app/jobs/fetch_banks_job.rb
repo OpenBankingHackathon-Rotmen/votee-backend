@@ -1,3 +1,9 @@
+require 'openssl'
+require "base64"
+require 'simple_uuid'
+require 'net/http'
+require 'open3'
+
 class FetchBanksJob < ApplicationJob
   queue_as :default
 
@@ -41,7 +47,7 @@ class FetchBanksJob < ApplicationJob
 		"
 
 		stdout, stderr, status = Open3.capture3(req)
-		puts "YAHAN STDOUT FETCH BANKS #{stdout}"
+		JSON.parse(stdout)["accounts"]
   end
 
   def request auth, uid
