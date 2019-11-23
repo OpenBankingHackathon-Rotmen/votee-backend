@@ -8,7 +8,8 @@ class AuthUserJob < ApplicationJob
   queue_as :default
 
   def perform
-  	path = "/Users/ritwickmalhotra/Desktop"
+  	# path = "/Users/ritwickmalhotra/Desktop"
+  	path = "/home/user16adm/Desktop"
     raw = File.read "#{path}/pwtkey.pem" 
 		rsa_private = OpenSSL::PKey::RSA.new raw
 
