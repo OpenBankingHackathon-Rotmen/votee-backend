@@ -41,7 +41,7 @@ class FetchBanksJob < ApplicationJob
 		"
 
 		stdout, stderr, status = Open3.capture3(req)
-		puts stdout
+		puts "YAHAN STDOUT FETCH BANKS #{stdout}"
   end
 
   def request auth, uid
