@@ -47,11 +47,51 @@ class FetchTokenJob < ApplicationJob
 	"
 		
 		stdout, stderr, status = Open3.capture3(req)
-		puts "YE LELO #{stdout}"
 		JSON.parse(stdout)["access_token"]
   end
 
   def request code, uid
+		{
+		  "requestHeader": {
+		    "requestId": "#{uid}",
+		    "userAgent": "string",
+		    "ipAddress": "string",
+		    "sendDate": "2019-11-23T16:18:07.201Z",
+		    "tppId": "string",
+		    "isCompanyContext": true,
+		    "psuIdentifierType": "string",
+		    "psuIdentifierValue": "string",
+		    "psuContextIdentifierType": "string",
+		    "psuContextIdentifierValue": "string"
+		  },
+		  "grant_type": "authorization_code",
+		  "Code": "#{code}",
+		  "redirect_uri": "string",
+		  "client_id": "string",
+		  "refresh_token": "string",
+		  "exchange_token": "string",
+		  "scope": "string",
+		  "scope_details": {
+		    "privilegeList": [
+		      {
+		        "accountNumber": "string",
+		        "ais-accounts:getAccounts": {
+		          "scopeUsageLimit": "single"
+		        }
+		      }
+		    ],
+		    "scopeGroupType": "ais-accounts",
+		    "consentId": "#{uid}",
+		    "scopeTimeLimit": "2020-11-23T16:18:07.202Z",
+		    "throttlingPolicy": "psd2Regulatory"
+		  },
+		  "is_user_session": true,
+		  "user_ip": "string",
+		  "user_agent": "string"
+		}
+	end
+
+	def request2 code, uid
 		{
 		  "requestHeader": {
 		    "requestId": "#{uid}",

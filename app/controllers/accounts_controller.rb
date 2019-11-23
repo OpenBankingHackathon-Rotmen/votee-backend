@@ -3,12 +3,13 @@ class AccountsController < ApplicationController
 		res = FetchBanksJob.new.perform(params[:token])
 		puts res
 
-		redirect_to fetch_account_path(account_number: res, token: params[:token])
+		redirect_to fetch_account_path(account_number: res, token: params[:token], code: params[:code])
 	end
 
 	def fetch_account 
-		acc_number = params["account_number"][0]["accountNumber"]
-		auth = params["token"]
+		acc_number = params["account_number"][0]["accountNumber"]		
+		auth = FetchExchangeTokenJob.new.perform(params["code"])
+		puts auth
 		a = FetchAccountInfoJob.new.perform(acc_number, auth)
 		puts a
 
