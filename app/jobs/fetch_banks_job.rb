@@ -56,7 +56,7 @@ req = "curl --request POST \\
 		    "userAgent": "string",
 		    "ipAddress": "string",
 		    "sendDate": "2019-11-23T16:39:33.607Z",
-		    "tppId": "string",
+		    "tppId": "PSDPL-KNF-1138278768",
 		    "token": "#{auth}",
 		    "isDirectPsu": true,
 		    "callbackURL": "string",

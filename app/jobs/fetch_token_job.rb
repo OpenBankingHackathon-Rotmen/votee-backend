@@ -58,7 +58,7 @@ class FetchTokenJob < ApplicationJob
 		    "userAgent": "string",
 		    "ipAddress": "string",
 		    "sendDate": "2019-11-23T16:18:07.201Z",
-		    "tppId": "string",
+		    "tppId": "PSDPL-KNF-1138278768",
 		    "isCompanyContext": true,
 		    "psuIdentifierType": "string",
 		    "psuIdentifierValue": "string",
