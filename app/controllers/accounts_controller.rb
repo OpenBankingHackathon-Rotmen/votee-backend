@@ -7,6 +7,6 @@ class AccountsController < ApplicationController
 	end
 
 	def fetch_account 
-		puts "THIS WHAT FETCH GOT #{params}"
+		puts "THIS WHAT FETCH GOT #{params["account_number"]["account_number"]}"
 	end
 end
