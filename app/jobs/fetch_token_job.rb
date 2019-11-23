@@ -47,6 +47,7 @@ class FetchTokenJob < ApplicationJob
 	"
 		
 		stdout, stderr, status = Open3.capture3(req)
+		puts stdout
 		JSON.parse(stdout)["access_token"]
   end
 
