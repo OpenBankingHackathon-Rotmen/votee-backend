@@ -48,7 +48,7 @@ class AuthUserJob < ApplicationJob
 		"
 	  stdout, stderr, status = Open3.capture3(req)
 	  puts stdout
-	  
+
 	  JSON.parse(stdout)["aspspRedirectUri"]
   end
 
@@ -67,9 +67,6 @@ class AuthUserJob < ApplicationJob
 		      {
 		        "accountNumber": "string",
 		        "ais-accounts:getAccounts": {
-		          "scopeUsageLimit": "single"
-		        },
-		        "ais:getAccount": {
 		          "scopeUsageLimit": "single"
 		        }
 		      }
