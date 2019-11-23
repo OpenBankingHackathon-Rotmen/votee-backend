@@ -7,7 +7,9 @@ class FetchUserController < ApplicationController
 	end
 
 	def index
-		AuthUserJob.new.perform
+		url = AuthUserJob.new.perform
+
+		redirect_to url
 	end
 private
 	def user
