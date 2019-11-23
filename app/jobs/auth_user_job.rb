@@ -60,16 +60,19 @@ class AuthUserJob < ApplicationJob
 		  "response_type":"code",
 		  "client_id":"PSDPL-KNF-1138278768",
 		  "redirect_uri":"http://localhost:3000/callback",
-		  "scope":"ais-accounts",
+		  "scope":"ais-accounts,ais",
 		  "scope_details": {
 		    "privilegeList": [
 		      { 
 		        "ais-accounts:getAccounts": {
 		          "scopeUsageLimit": "multiple"
-		        }
+		        },
+						"ais:getAccount": {
+	          "scopeUsageLimit": "single"
+	        	}
 		      }
 		    ],
-		    "scopeGroupType":"ais-accounts",
+		    "scopeGroupType":"ais-accounts,ais",
 		    "consentId":"#{uid}",
 		    "scopeTimeLimit":"2020-02-13T13:34:41.828Z",
 		    "throttlingPolicy":"psd2Regulatory"
