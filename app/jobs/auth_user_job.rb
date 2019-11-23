@@ -47,7 +47,6 @@ class AuthUserJob < ApplicationJob
 		  --insecure
 		"
 	  stdout, stderr, status = Open3.capture3(req)
-	  puts stdout
 	  JSON.parse(stdout)["aspspRedirectUri"]
   end
 
@@ -63,16 +62,488 @@ class AuthUserJob < ApplicationJob
 		  "scope":"ais-accounts",
 		  "scope_details": {
 		    "privilegeList": [
-	        "ais-accounts:getAccounts": {
-	          "scopeUsageLimit": "multiple"
-	        },
-	        "ais:getAccount": {
-        		"scopeUsageLimit": "single"
-     		 	},
-      		"ais:getHolds": {
-        		"scopeUsageLimit": "single",
-        		"maxAllowedHistoryLong": 0
-      		}
+		      {
+		        "accountNumber": "string",
+		        "ais-accounts:getAccounts": {
+		          "scopeUsageLimit": "single"
+		        },
+		        "ais:getAccount": {
+		          "scopeUsageLimit": "single"
+		        },
+		        "ais:getHolds": {
+		          "scopeUsageLimit": "single",
+		          "maxAllowedHistoryLong": 0
+		        },
+		        "ais:getTransactionsDone": {
+		          "scopeUsageLimit": "single",
+		          "maxAllowedHistoryLong": 0
+		        },
+		        "ais:getTransactionsPending": {
+		          "scopeUsageLimit": "single",
+		          "maxAllowedHistoryLong": 0
+		        },
+		        "ais:getTransactionsRejected": {
+		          "scopeUsageLimit": "single",
+		          "maxAllowedHistoryLong": 0
+		        },
+		        "ais:getTransactionsCancelled": {
+		          "scopeUsageLimit": "single",
+		          "maxAllowedHistoryLong": 0
+		        },
+		        "ais:getTransactionsScheduled": {
+		          "scopeUsageLimit": "single",
+		          "maxAllowedHistoryLong": 0
+		        },
+		        "ais:getTransactionDetail": {
+		          "scopeUsageLimit": "single"
+		        },
+		        "pis:getPayment": {
+		          "scopeUsageLimit": "single",
+		          "paymentId": "string",
+		          "tppTransactionId": "string"
+		        },
+		        "pis:getBundle": {
+		          "scopeUsageLimit": "single",
+		          "bundleId": "string",
+		          "tppBundleId": "string"
+		        },
+		        "pis:domestic": {
+		          "scopeUsageLimit": "single",
+		          "recipient": {
+		            "accountNumber": "string",
+		            "nameAddress": {
+		              "value": [
+		                "string"
+		              ]
+		            }
+		          },
+		          "sender": {
+		            "accountNumber": "string",
+		            "nameAddress": {
+		              "value": [
+		                "string"
+		              ]
+		            }
+		          },
+		          "transferData": {
+		            "description": "string",
+		            "amount": "string",
+		            "executionDate": "2019-11-23",
+		            "currency": "string"
+		          },
+		          "deliveryMode": "ExpressD0",
+		          "system": "Elixir",
+		          "executionMode": "Immediate"
+		        },
+		        "pis:EEA": {
+		          "scopeUsageLimit": "single",
+		          "recipient": {
+		            "accountNumber": "string",
+		            "nameAddress": {
+		              "value": [
+		                "string"
+		              ]
+		            }
+		          },
+		          "sender": {
+		            "accountNumber": "string",
+		            "nameAddress": {
+		              "value": [
+		                "string"
+		              ]
+		            }
+		          },
+		          "transferData": {
+		            "description": "string",
+		            "amount": "string",
+		            "executionDate": "2019-11-23",
+		            "currency": "string"
+		          },
+		          "deliveryMode": "ExpressD0",
+		          "system": "SEPA",
+		          "executionMode": "Immediate"
+		        },
+		        "pis:nonEEA": {
+		          "scopeUsageLimit": "single",
+		          "recipient": {
+		            "accountNumber": "string",
+		            "nameAddress": {
+		              "value": [
+		                "string"
+		              ]
+		            }
+		          },
+		          "recipientBank": {
+		            "bicOrSwift": "string",
+		            "name": "string",
+		            "code": "string",
+		            "countryCode": "string",
+		            "address": [
+		              "string"
+		            ]
+		          },
+		          "sender": {
+		            "accountNumber": "string",
+		            "nameAddress": {
+		              "value": [
+		                "string"
+		              ]
+		            }
+		          },
+		          "transferData": {
+		            "description": "string",
+		            "amount": "string",
+		            "executionDate": "2019-11-23",
+		            "currency": "string"
+		          },
+		          "transferCharges": "string",
+		          "deliveryMode": "ExpressD0",
+		          "system": "Swift",
+		          "executionMode": "Immediate"
+		        },
+		        "pis:tax": {
+		          "scopeUsageLimit": "single",
+		          "recipient": {
+		            "accountNumber": "string",
+		            "nameAddress": {
+		              "value": [
+		                "string"
+		              ]
+		            }
+		          },
+		          "sender": {
+		            "accountNumber": "string",
+		            "nameAddress": {
+		              "value": [
+		                "string"
+		              ]
+		            }
+		          },
+		          "transferData": {
+		            "amount": "string",
+		            "executionDate": "2019-11-23",
+		            "currency": "string"
+		          },
+		          "usInfo": {
+		            "payerInfo": {
+		              "payorId": "string",
+		              "payorIdType": "N"
+		            },
+		            "formCode": "string",
+		            "periodId": "string",
+		            "periodType": "string",
+		            "year": 0,
+		            "obligationId": "string"
+		          },
+		          "deliveryMode": "ExpressD0",
+		          "system": "Elixir",
+		          "executionMode": "Immediate"
+		        },
+		        "pis:cancelPayment": {
+		          "scopeUsageLimit": "single",
+		          "paymentId": "string",
+		          "bundleId": "string"
+		        },
+		        "pis:bundle": {
+		          "scopeUsageLimit": "single",
+		          "transfersTotalAmount": "string",
+		          "typeOfTransfers": "domestic",
+		          "domesticTransfers": [
+		            {
+		              "recipient": {
+		                "accountNumber": "string",
+		                "nameAddress": {
+		                  "value": [
+		                    "string"
+		                  ]
+		                }
+		              },
+		              "sender": {
+		                "accountNumber": "string",
+		                "nameAddress": {
+		                  "value": [
+		                    "string"
+		                  ]
+		                }
+		              },
+		              "transferData": {
+		                "description": "string",
+		                "amount": "string",
+		                "executionDate": "2019-11-23",
+		                "currency": "string"
+		              },
+		              "tppTransactionId": "string",
+		              "deliveryMode": "ExpressD0",
+		              "system": "Elixir",
+		              "hold": true,
+		              "executionMode": "Immediate"
+		            }
+		          ],
+		          "EEATransfers": [
+		            {
+		              "recipient": {
+		                "accountNumber": "string",
+		                "nameAddress": {
+		                  "value": [
+		                    "string"
+		                  ]
+		                }
+		              },
+		              "sender": {
+		                "accountNumber": "string",
+		                "nameAddress": {
+		                  "value": [
+		                    "string"
+		                  ]
+		                }
+		              },
+		              "transferData": {
+		                "description": "string",
+		                "amount": "string",
+		                "executionDate": "2019-11-23",
+		                "currency": "string"
+		              },
+		              "tppTransactionId": "string",
+		              "deliveryMode": "ExpressD0",
+		              "system": "SEPA",
+		              "hold": true,
+		              "executionMode": "Immediate"
+		            }
+		          ],
+		          "nonEEATransfers": [
+		            {
+		              "recipient": {
+		                "accountNumber": "string",
+		                "nameAddress": {
+		                  "value": [
+		                    "string"
+		                  ]
+		                }
+		              },
+		              "recipientBank": {
+		                "bicOrSwift": "string",
+		                "name": "string",
+		                "code": "string",
+		                "countryCode": "string",
+		                "address": [
+		                  "string"
+		                ]
+		              },
+		              "sender": {
+		                "accountNumber": "string",
+		                "nameAddress": {
+		                  "value": [
+		                    "string"
+		                  ]
+		                }
+		              },
+		              "transferData": {
+		                "description": "string",
+		                "amount": "string",
+		                "executionDate": "2019-11-23",
+		                "currency": "string"
+		              },
+		              "transferCharges": "string",
+		              "tppTransactionId": "string",
+		              "deliveryMode": "ExpressD0",
+		              "system": "Swift",
+		              "hold": true,
+		              "executionMode": "Immediate"
+		            }
+		          ],
+		          "taxTransfers": [
+		            {
+		              "recipient": {
+		                "accountNumber": "string",
+		                "nameAddress": {
+		                  "value": [
+		                    "string"
+		                  ]
+		                }
+		              },
+		              "sender": {
+		                "accountNumber": "string",
+		                "nameAddress": {
+		                  "value": [
+		                    "string"
+		                  ]
+		                }
+		              },
+		              "transferData": {
+		                "amount": "string",
+		                "executionDate": "2019-11-23",
+		                "currency": "string"
+		              },
+		              "usInfo": {
+		                "payerInfo": {
+		                  "payorId": "string",
+		                  "payorIdType": "N"
+		                },
+		                "formCode": "string",
+		                "periodId": "string",
+		                "periodType": "string",
+		                "year": 0,
+		                "obligationId": "string"
+		              },
+		              "tppTransactionId": "string",
+		              "deliveryMode": "ExpressD0",
+		              "system": "Elixir",
+		              "hold": true,
+		              "executionMode": "Immediate"
+		            }
+		          ]
+		        },
+		        "pis:recurring": {
+		          "scopeUsageLimit": "single",
+		          "recurrence": {
+		            "startDate": "2019-11-23",
+		            "frequency": {
+		              "periodType": "day",
+		              "periodValue": 0
+		            },
+		            "endDate": "2019-11-23",
+		            "dayOffOffsetType": "before"
+		          },
+		          "typeOfPayment": "domestic",
+		          "domesticPayment": {
+		            "recipient": {
+		              "accountNumber": "string",
+		              "nameAddress": {
+		                "value": [
+		                  "string"
+		                ]
+		              }
+		            },
+		            "sender": {
+		              "accountNumber": "string",
+		              "nameAddress": {
+		                "value": [
+		                  "string"
+		                ]
+		              }
+		            },
+		            "transferData": {
+		              "description": "string",
+		              "amount": "string",
+		              "executionDate": "2019-11-23",
+		              "currency": "string"
+		            },
+		            "deliveryMode": "ExpressD0",
+		            "system": "Elixir",
+		            "hold": true
+		          },
+		          "EEAPayment": {
+		            "recipient": {
+		              "accountNumber": "string",
+		              "nameAddress": {
+		                "value": [
+		                  "string"
+		                ]
+		              }
+		            },
+		            "sender": {
+		              "accountNumber": "string",
+		              "nameAddress": {
+		                "value": [
+		                  "string"
+		                ]
+		              }
+		            },
+		            "transferData": {
+		              "description": "string",
+		              "amount": "string",
+		              "executionDate": "2019-11-23",
+		              "currency": "string"
+		            },
+		            "deliveryMode": "ExpressD0",
+		            "system": "SEPA",
+		            "hold": true
+		          },
+		          "nonEEAPayment": {
+		            "recipient": {
+		              "accountNumber": "string",
+		              "nameAddress": {
+		                "value": [
+		                  "string"
+		                ]
+		              }
+		            },
+		            "recipientBank": {
+		              "bicOrSwift": "string",
+		              "name": "string",
+		              "code": "string",
+		              "countryCode": "string",
+		              "address": [
+		                "string"
+		              ]
+		            },
+		            "sender": {
+		              "accountNumber": "string",
+		              "nameAddress": {
+		                "value": [
+		                  "string"
+		                ]
+		              }
+		            },
+		            "transferData": {
+		              "description": "string",
+		              "amount": "string",
+		              "executionDate": "2019-11-23",
+		              "currency": "string"
+		            },
+		            "transferCharges": "string",
+		            "deliveryMode": "ExpressD0",
+		            "system": "Swift",
+		            "hold": true
+		          },
+		          "taxPayment": {
+		            "recipient": {
+		              "accountNumber": "string",
+		              "nameAddress": {
+		                "value": [
+		                  "string"
+		                ]
+		              }
+		            },
+		            "sender": {
+		              "accountNumber": "string",
+		              "nameAddress": {
+		                "value": [
+		                  "string"
+		                ]
+		              }
+		            },
+		            "transferData": {
+		              "amount": "string",
+		              "executionDate": "2019-11-23",
+		              "currency": "string"
+		            },
+		            "usInfo": {
+		              "payerInfo": {
+		                "payorId": "string",
+		                "payorIdType": "N"
+		              },
+		              "formCode": "string",
+		              "periodId": "string",
+		              "periodType": "string",
+		              "year": 0,
+		              "obligationId": "string"
+		            },
+		            "deliveryMode": "ExpressD0",
+		            "system": "Elixir",
+		            "hold": true
+		          }
+		        },
+		        "pis:getRecurringPayment": {
+		          "scopeUsageLimit": "single",
+		          "recurringPaymentId": "string",
+		          "tppRecurringPaymentId": "string"
+		        },
+		        "pis:cancelRecurringPayment": {
+		          "scopeUsageLimit": "single",
+		          "recurringPaymentId": "string"
+		        }
+		      }
 		    ],
 		    "scopeGroupType":"ais-accounts",
 		    "consentId":"#{uid}",
