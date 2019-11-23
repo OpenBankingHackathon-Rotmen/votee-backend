@@ -11,7 +11,7 @@ class AccountsController < ApplicationController
 		auth = params["token"]
 		a = FetchAccountInfoJob.new.perform(acc_number, auth)
 		puts a
-		
-		puts "ACCOUNT: #{acc_number}\n TOKEN: #{auth}\n"
+
+		puts "ACCOUNT: #{acc_number}\nTOKEN: #{auth}\n"
 	end
 end
