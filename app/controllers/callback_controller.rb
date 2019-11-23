@@ -3,7 +3,7 @@ class CallbackController < ApplicationController
 		token = FetchAccountsJob.new.perform(params[:code])
 
 		puts token
-		redirect_to root
+		# redirect_to root
 	end
 end
 
