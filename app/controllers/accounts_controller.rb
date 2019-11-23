@@ -1,5 +1,5 @@
 class AccountsController < ApplicationController
-	def show
+	def index
 		res = FetchBanksJob.perform(params[:id])
 
 		puts res
