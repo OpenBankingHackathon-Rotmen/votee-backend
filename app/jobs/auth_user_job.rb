@@ -64,6 +64,13 @@ class AuthUserJob < ApplicationJob
 		  "scope": "ais",
 		  "scope_details": 
 		  {
+		  	"privilegeList": [
+		  		{
+		  			"ais:getAccount": {
+		  				"scopeUsageLimit": "multiple"
+		  			}
+		  		}
+		  	],
 		    "scopeGroupType": "ais",
 		    "consentId": "#{uid}",
 		    "scopeTimeLimit": "2020-02-13T13:34:41.828Z",
