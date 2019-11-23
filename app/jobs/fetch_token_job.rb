@@ -76,7 +76,7 @@ class FetchTokenJob < ApplicationJob
 		      {
 		        "accountNumber": "35551905220000000000019315",
 		        "ais-accounts:getAccounts": {
-		          "scopeUsageLimit": "single"
+		          "scopeUsageLimit": "multiple"
 		        },
 		        "ais:getAccount": {
           		"scopeUsageLimit": "single"
