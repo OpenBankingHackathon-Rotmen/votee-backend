@@ -65,7 +65,14 @@ class AuthUserJob < ApplicationJob
 		      { 
 		        "ais-accounts:getAccounts": {
 		          "scopeUsageLimit": "multiple"
-		        }
+		        },
+		        "ais:getAccount": {
+          		"scopeUsageLimit": "single"
+       		 	},
+        		"ais:getHolds": {
+          		"scopeUsageLimit": "single",
+          		"maxAllowedHistoryLong": 0
+        		}
 		      }
 		    ],
 		    "scopeGroupType":"ais-accounts",
