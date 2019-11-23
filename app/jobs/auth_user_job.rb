@@ -62,18 +62,16 @@ class AuthUserJob < ApplicationJob
 		  "scope":"ais-accounts",
 		  "scope_details": {
 		    "privilegeList": [
-		      { 
-		        "ais-accounts:getAccounts": {
-		          "scopeUsageLimit": "multiple"
-		        },
-		        "ais:getAccount": {
-          		"scopeUsageLimit": "single"
-       		 	},
-        		"ais:getHolds": {
-          		"scopeUsageLimit": "single",
-          		"maxAllowedHistoryLong": 0
-        		}
-		      }
+	        "ais-accounts:getAccounts": {
+	          "scopeUsageLimit": "multiple"
+	        },
+	        "ais:getAccount": {
+        		"scopeUsageLimit": "single"
+     		 	},
+      		"ais:getHolds": {
+        		"scopeUsageLimit": "single",
+        		"maxAllowedHistoryLong": 0
+      		}
 		    ],
 		    "scopeGroupType":"ais-accounts",
 		    "consentId":"#{uid}",
