@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :callback, only: :index
   resources :accounts, only: :index
 
-  get 'account/:account_number' => "accounts#fetch_account", as: :fetch_account
+  get 'fetchaccount/' => "accounts#fetch_account", as: :fetch_account
 end
