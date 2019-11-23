@@ -79,7 +79,8 @@ class FetchTokenJob < ApplicationJob
 		          "scopeUsageLimit": "single"
 		        },
 		        "ais:getAccount": {
-          	"scopeUsageLimit": "single"
+          		"scopeUsageLimit": "single"
+          	}
         	}
 		    ],
 		    "scopeGroupType": "ais-accounts",
