@@ -66,7 +66,7 @@ class FetchTokenJob < ApplicationJob
 		    "psuContextIdentifierValue": "string"
 		  },
 		  "grant_type": "exchange_token",
-		  "Code": "#{code}",
+		  "exchange_token": "#{code}",
 		  "redirect_uri": "string",
 		  "client_id": "string",
 		  "refresh_token": "string",
