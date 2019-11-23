@@ -77,8 +77,10 @@ class FetchTokenJob < ApplicationJob
 		        "accountNumber": "string",
 		        "ais-accounts:getAccounts": {
 		          "scopeUsageLimit": "single"
-		        }
-		      }
+		        },
+		        "ais:getAccount": {
+          	"scopeUsageLimit": "single"
+        	}
 		    ],
 		    "scopeGroupType": "ais-accounts",
 		    "consentId": "#{uid}",
