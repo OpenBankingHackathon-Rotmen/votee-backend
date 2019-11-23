@@ -40,8 +40,8 @@ req = "curl --request POST \\
   --header 'cache-control: no-cache' \\
   --header 'X-REQUEST-ID: #{uuid}' \\
   --data '#{json}' \\
-  --cert qwac.pem \\
-  --key pwtkey.pem \\
+  --cert '#{path}/qwac.pem' \\
+  --key '#{path}/pwtkey.pem' \\
   --insecure
 "
 
