@@ -69,43 +69,6 @@ class AuthUserJob < ApplicationJob
 		        },
 		        "ais:getAccount": {
 		          "scopeUsageLimit": "single"
-		        },
-		        "ais:getHolds": {
-		          "scopeUsageLimit": "single",
-		          "maxAllowedHistoryLong": 0
-		        },
-		        "ais:getTransactionsDone": {
-		          "scopeUsageLimit": "single",
-		          "maxAllowedHistoryLong": 0
-		        },
-		        "ais:getTransactionsPending": {
-		          "scopeUsageLimit": "single",
-		          "maxAllowedHistoryLong": 0
-		        },
-		        "ais:getTransactionsRejected": {
-		          "scopeUsageLimit": "single",
-		          "maxAllowedHistoryLong": 0
-		        },
-		        "ais:getTransactionsCancelled": {
-		          "scopeUsageLimit": "single",
-		          "maxAllowedHistoryLong": 0
-		        },
-		        "ais:getTransactionsScheduled": {
-		          "scopeUsageLimit": "single",
-		          "maxAllowedHistoryLong": 0
-		        },
-		        "ais:getTransactionDetail": {
-		          "scopeUsageLimit": "single"
-		        },
-		        "pis:getPayment": {
-		          "scopeUsageLimit": "single",
-		          "paymentId": "string",
-		          "tppTransactionId": "string"
-		        },
-		        "pis:getBundle": {
-		          "scopeUsageLimit": "single",
-		          "bundleId": "string",
-		          "tppBundleId": "string"
 		        }
 		      }
 		    ],
