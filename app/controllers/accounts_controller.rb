@@ -2,10 +2,10 @@ class AccountsController < ApplicationController
 	def index
 		res = FetchBanksJob.new.perform(params[:token])
 
-		redirect_to account_path(account: res["accountNumber"], token: params[:token])
+		redirect_to fetch_account_path(account_number: res["accountNumber"], token: params[:token])
 	end
 
-	def show 
+	def fetch_account 
 		puts params
 	end
 end
