@@ -31,23 +31,21 @@ class FetchBanksJob < ApplicationJob
 		json = Base64.decode64(token.split('.')[1])
 		token = token.gsub(token.split('.')[1], "")
 
-
-		req = "curl --request POST \\
-		  --url https://api-obh.kir.pl/v2_1_1.1/accounts/v2_1_1.1/getAccounts \\
-		  --header 'Accept: application/json' \\
-		  --header 'Accept-Charset: utf-8' \\
-		  --header 'Content-Type: application/json' \\
-		  --header 'X-JWS-SIGNATURE: #{token}' \\
-		  --header 'cache-control: no-cache' \\
-		  --header 'X-REQUEST-ID: #{uuid}' \\
-		  --data '#{json}' \\
-		  --cert '#{path}qwac.pem' \\
-		  --key '#{path}/pwtkey.pem' \\
-		  --insecure
-		"
+req = "curl --request POST \\
+  --url https://api-obh.kir.pl/v2_1_1.1/accounts/v2_1_1.1/getAccounts \\
+  --header 'Accept: application/json' \\
+  --header 'Accept-Charset: utf-8' \\
+  --header 'Content-Type: application/json' \\
+  --header 'X-JWS-SIGNATURE: #{token}' \\
+  --header 'cache-control: no-cache' \\
+  --header 'X-REQUEST-ID: #{uuid}' \\
+  --data '#{json}' \\
+  --cert qwac.pem \\
+  --key pwtkey.pem \\
+  --insecure
+"
 
 		stdout, stderr, status = Open3.capture3(req)
-		JSON.parse(stdout)["accounts"]
   end
 
   def request auth, uid
@@ -63,7 +61,6 @@ class FetchBanksJob < ApplicationJob
 		    "callbackURL": "string",
 		    "apiKey": "string"
 		  },
-		  # "pageId": "string",
 		  "perPage": 10
 		}
 	end
