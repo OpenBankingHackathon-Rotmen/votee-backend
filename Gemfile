@@ -25,6 +25,7 @@ gem 'jwt'
 gem 'openssl'
 gem 'simple_uuid'
 gem 'open3'
+gem 'byebug'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
