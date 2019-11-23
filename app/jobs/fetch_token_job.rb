@@ -4,7 +4,7 @@ require 'simple_uuid'
 require 'net/http'
 require 'open3'
 
-class FetchAccountsJob < ApplicationJob
+class FetchToken < ApplicationJob
   queue_as :default
 
   def perform(code)
@@ -47,7 +47,7 @@ class FetchAccountsJob < ApplicationJob
 	"
 		
 		stdout, stderr, status = Open3.capture3(req)
-  	stdout
+  	stdout["access_token"]
   end
 
   def request code, uid
