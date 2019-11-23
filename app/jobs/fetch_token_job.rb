@@ -4,7 +4,7 @@ require 'simple_uuid'
 require 'net/http'
 require 'open3'
 
-class FetchToken < ApplicationJob
+class FetchTokenJob < ApplicationJob
   queue_as :default
 
   def perform(code)
