@@ -1,6 +1,6 @@
 class AccountsController < ApplicationController
-	def create
-		res = FetchBanksJob.perform(params[:token])
+	def show
+		res = FetchBanksJob.perform(params[:id])
 
 		puts res
 	end
