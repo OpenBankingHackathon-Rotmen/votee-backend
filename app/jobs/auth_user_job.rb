@@ -58,7 +58,7 @@ class AuthUserJob < ApplicationJob
 		  },
 		  "response_type":"code",
 		  "client_id":"PSDPL-KNF-1138278768",
-		  "redirect_uri":"http://google.com",
+		  "redirect_uri":"http://localhost:3000/callback",
 		  "scope":"ais-accounts",
 		  "scope_details": {
 		    "privilegeList": [
