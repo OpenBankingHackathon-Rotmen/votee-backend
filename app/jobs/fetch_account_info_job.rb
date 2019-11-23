@@ -31,7 +31,6 @@ class FetchAccountInfoJob < ApplicationJob
 		json = Base64.decode64(token.split('.')[1])
 		token = token.gsub(token.split('.')[1], "")
 
-
 	req = "curl --request POST \\
 	  --url https://api-obh.kir.pl/v2_1_1.1/accounts/v2_1_1.1/getAccount \\
 	  --header 'Accept: application/json' \\
