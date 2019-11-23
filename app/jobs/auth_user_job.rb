@@ -62,6 +62,13 @@ class AuthUserJob < ApplicationJob
 		  "redirect_uri":"http://localhost:3000/callback",
 		  "scope":"ais",
 		  "scope_details": {
+		    "privilegeList": [
+		      { 
+						"ais:getAccount": {
+	          	"scopeUsageLimit": "single"
+	        	}
+		      }
+		    ],
 		    "scopeGroupType":"ais",
 		    "consentId":"#{uid}",
 		    "scopeTimeLimit":"2020-02-13T13:34:41.828Z",
