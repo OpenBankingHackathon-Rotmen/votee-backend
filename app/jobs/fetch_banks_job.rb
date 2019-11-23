@@ -41,7 +41,7 @@ class FetchBanksJob < ApplicationJob
 		"
 
 		stdout, stderr, status = Open3.capture3(req)
-		puts JSON.parse(stdout)
+		puts stdout
   end
 
   def request auth, uid
