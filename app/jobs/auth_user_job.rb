@@ -47,8 +47,6 @@ class AuthUserJob < ApplicationJob
 		  --insecure
 		"
 	  stdout, stderr, status = Open3.capture3(req)
-	  puts stdout
-
 	  JSON.parse(stdout)["aspspRedirectUri"]
   end
 
@@ -64,10 +62,9 @@ class AuthUserJob < ApplicationJob
 		  "scope":"ais-accounts",
 		  "scope_details": {
 		    "privilegeList": [
-		      {
-		        "accountNumber": "string",
+		      { 
 		        "ais-accounts:getAccounts": {
-		          "scopeUsageLimit": "single"
+		          "scopeUsageLimit": "multiple"
 		        }
 		      }
 		    ],
