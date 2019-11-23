@@ -17,7 +17,7 @@ class FetchAccountsJob < ApplicationJob
 		qseal_URL = "https://gist.githubusercontent.com/archetype2142/610a37d823a268c9c24f4e780db77220/raw/609425285b001643de47bb4131b9dba0a770f9b8/qseal.pem"
 		qseal_fingerprint_url = "5ef8081658f5fc72c7268938047646cf39536ee35c14ec6b4c3005c72c940fed"
 		uuid = SimpleUUID::UUID.new.to_guid
-		new_payload = request2(payload, uuid)
+		new_payload = request(code, uuid)
 
 		header_fields = {
 			alg: "RS256",
