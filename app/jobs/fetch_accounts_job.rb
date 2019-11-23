@@ -47,7 +47,7 @@ class FetchAccountsJob < ApplicationJob
 	"
 		
 		stdout, stderr, status = Open3.capture3(req)
-  	JSON.parse(stdout)["access_token"]
+  	stdout
   end
 
   def request code, uid
