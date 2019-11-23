@@ -47,6 +47,7 @@ class AuthUserJob < ApplicationJob
 		  --insecure
 		"
 	  stdout, stderr, status = Open3.capture3(req)
+	  puts stdout
 	  JSON.parse(stdout)["aspspRedirectUri"]
   end
 
