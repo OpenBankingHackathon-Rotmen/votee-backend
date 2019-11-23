@@ -46,7 +46,7 @@ req = "curl --request POST \\
 "
 
 		stdout, stderr, status = Open3.capture3(req)
-	  JSON.parse(stdout)["accounts"]["accountNumber"]
+	  JSON.parse(stdout)["accounts"]
   end
 
   def request auth, uid
