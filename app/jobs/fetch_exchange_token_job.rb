@@ -70,7 +70,8 @@ def request code, uid
 	    "privilegeList": [
 	      {
 	        "ais:getAccount": {
-      		"scopeUsageLimit": "single"
+      			"scopeUsageLimit": "single"
+      		}
       	}
     	}
 	    ],

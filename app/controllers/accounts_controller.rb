@@ -8,7 +8,7 @@ class AccountsController < ApplicationController
 
 	def fetch_account 
 		acc_number = params["account_number"][0]["accountNumber"]		
-		auth = FetchExchangeTokenJob.new.perform(params["token"])
+		auth = FetchExchangeTokenJob.new.perform(params["code"])
 		puts auth
 
 		a = FetchAccountInfoJob.new.perform(acc_number, auth)
