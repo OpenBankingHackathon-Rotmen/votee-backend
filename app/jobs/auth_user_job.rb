@@ -68,34 +68,36 @@ class AuthUserJob < ApplicationJob
 		        "ais:getAccount": {
           		"scopeUsageLimit": "single"
         		},
-        		"pis:domestic": {
-	          	"scopeUsageLimit": "single",
-	          	"recipient": {
-	            "accountNumber": "string",
-	            "nameAddress": {
-	              "value": [
-	                "string"
-	              ]
-	            }
-	          },
-	          "sender": {
-	            "accountNumber": "string",
-	            "nameAddress": {
-	              "value": [
-	                "string"
-	              ]
-	            }
-	          },
-	          "transferData": {
-	            "description": "string",
-	            "amount": "string",
-	            "executionDate": "2019-11-24",
-	            "currency": "string"
-	          },
-	          "deliveryMode": "ExpressD0",
-	          "system": "Elixir",
-	          "executionMode": "Immediate"
-	        	},
+		        "ais:getAccount": {
+		          "scopeUsageLimit": "single"
+		        },
+		        "ais:getHolds": {
+		          "scopeUsageLimit": "single",
+		          "maxAllowedHistoryLong": 0
+		        },
+		        "ais:getTransactionsDone": {
+		          "scopeUsageLimit": "single",
+		          "maxAllowedHistoryLong": 0
+		        },
+		        "ais:getTransactionsPending": {
+		          "scopeUsageLimit": "single",
+		          "maxAllowedHistoryLong": 0
+		        },
+		        "ais:getTransactionsRejected": {
+		          "scopeUsageLimit": "single",
+		          "maxAllowedHistoryLong": 0
+		        },
+		        "ais:getTransactionsCancelled": {
+		          "scopeUsageLimit": "single",
+		          "maxAllowedHistoryLong": 0
+		        },
+		        "ais:getTransactionsScheduled": {
+		          "scopeUsageLimit": "single",
+		          "maxAllowedHistoryLong": 0
+		        },
+		        "ais:getTransactionDetail": {
+		          "scopeUsageLimit": "single"
+		        },
 		      }
 		    ],
 		    "scopeGroupType": "ais",
