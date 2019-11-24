@@ -69,9 +69,9 @@ def request code, uid
 	  "scope_details": {
 	    "privilegeList": [
 	      {
-	        "ais:getAccount": {
-      			"scopeUsageLimit": "multiple"
-      		}
+	        "ais-accounts:getAccounts": {
+          	"scopeUsageLimit": "multiple"
+					}
       	}
 	    ],
 	    "scopeGroupType": "ais",
