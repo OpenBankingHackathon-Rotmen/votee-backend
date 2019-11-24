@@ -68,6 +68,34 @@ class AuthUserJob < ApplicationJob
 		        "ais:getAccount": {
           		"scopeUsageLimit": "single"
         		},
+        		"pis:domestic": {
+	          	"scopeUsageLimit": "single",
+	          	"recipient": {
+	            "accountNumber": "string",
+	            "nameAddress": {
+	              "value": [
+	                "string"
+	              ]
+	            }
+	          },
+	          "sender": {
+	            "accountNumber": "string",
+	            "nameAddress": {
+	              "value": [
+	                "string"
+	              ]
+	            }
+	          },
+	          "transferData": {
+	            "description": "string",
+	            "amount": "string",
+	            "executionDate": "2019-11-24",
+	            "currency": "string"
+	          },
+	          "deliveryMode": "ExpressD0",
+	          "system": "Elixir",
+	          "executionMode": "Immediate"
+	        	},
 		      }
 		    ],
 		    "scopeGroupType": "ais",
