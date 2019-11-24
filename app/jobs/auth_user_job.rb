@@ -64,7 +64,7 @@ class AuthUserJob < ApplicationJob
 		  "scope_details": {
 		    "privilegeList": [
 		      { 
-		      	"accountNumber": "35551905220000000000019315"
+		      	"accountNumber": "35551905220000000000019315",
 		        "ais:accountDetails": {
         			"scopeUsageLimit": "MULTIPLE"
       			}
