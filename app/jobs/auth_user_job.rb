@@ -65,9 +65,9 @@ class AuthUserJob < ApplicationJob
 		    "privilegeList": [
 		      { 
 		      	"accountNumber": "35551905220000000000019315",
-		        "ais:accountDetails": {
-        			"scopeUsageLimit": "multiple"
-      			}
+		        "ais:getAccount": {
+          		"scopeUsageLimit": "single"
+        		},
 		      }
 		    ],
 		    "scopeGroupType": "ais",
@@ -78,5 +78,5 @@ class AuthUserJob < ApplicationJob
 		  "state": "92268605-0243-4608-832c-6c70b67f9292"
 		}
 	end
-	
+
 end
