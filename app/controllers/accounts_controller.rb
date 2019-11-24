@@ -7,14 +7,15 @@ class AccountsController < ApplicationController
 	end
 
 	def fetch_account 
-		acc_number = params["account_number"][0]["accountNumber"]		
+		# acc_number = params["account_number"][0]["accountNumber"]		
+		acc_number = "35551905220000000000019315"
 		auth = FetchExchangeTokenJob.new.perform(params["code"])
 		puts auth
 
 		a = FetchAccountInfoJob.new.perform(acc_number, auth)
 
 		puts "YE WALI DELHO #{a}"
-		puts "ACCOUNT: #{acc_number}\nTOKEN_NEW: #{auth}\n"
-		puts "TOKEN_OLD: #{params["token"]}\n"
+		# puts "ACCOUNT: #{acc_number}\nTOKEN_NEW: #{auth}\n"
+		# puts "TOKEN_OLD: #{params["token"]}\n"
 	end
 end
