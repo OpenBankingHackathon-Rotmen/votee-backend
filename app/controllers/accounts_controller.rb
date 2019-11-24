@@ -18,6 +18,6 @@ class AccountsController < ApplicationController
 		# puts "ACCOUNT: #{acc_number}\nTOKEN_NEW: #{auth}\n"
 		# puts "TOKEN_OLD: #{params["token"]}\n"
 
-		redirect_to "https://votee.now.sh/redirect", a
+		redirect_to "https://votee.now.sh/redirect/?accountNumber=#{JSON.parse(a["account"]["accountNumber"])}&accountType=#{JSON.parse(a["account"]["accountType"]["accountHolderType"])}"
 	end
 end
