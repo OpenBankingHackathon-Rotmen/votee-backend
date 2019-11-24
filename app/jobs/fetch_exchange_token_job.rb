@@ -47,7 +47,7 @@ class FetchExchangeTokenJob < ApplicationJob
 	"
 		
 		stdout, stderr, status = Open3.capture3(req)
-		puts "\nREQUEST EXCHANGE DEKHLO #{stdout}\n"
+		puts "\n\n\nREQUEST EXCHANGE DEKHLO #{stdout}\n\n\n"
 		JSON.parse(stdout)["access_token"]
   end
 
