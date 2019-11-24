@@ -73,7 +73,6 @@ def request code, uid
       			"scopeUsageLimit": "single"
       		}
       	}
-    	}
 	    ],
 	    "scopeGroupType": "ais",
 	    "consentId": "#{uid}",
