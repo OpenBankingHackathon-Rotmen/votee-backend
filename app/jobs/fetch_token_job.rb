@@ -74,7 +74,6 @@ class FetchTokenJob < ApplicationJob
 		  "scope_details": {
 		    "privilegeList": [
 		      {
-		        "accountNumber": "string",
 		        "ais-accounts:getAccounts": {
 		          "scopeUsageLimit": "single"
 		        }
