@@ -67,14 +67,13 @@ class FetchExchangeTokenJob < ApplicationJob
 		  "grant_type": "exchange_token",
 		  "redirect_uri": "string",
 		  "client_id": "string",
-		  "refresh_token": "string",
 		  "exchange_token": "#{code}",
 		  "scope": "ais",
 		  "scope_details": {
 		    "privilegeList": [
 		      {
 		        "ais:getAccount": {
-	      			"scopeUsageLimit": "multiple"
+	      			"scopeUsageLimit": "single"
 	      		}
 	      	}
 		    ],
