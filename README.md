@@ -1,24 +1,8 @@
-# README
+# Votee Hackathon project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Votee uses blockchain and the PSD2(Revised Directive on Payment Services) to leverage e-voting.
+A user can login with his/her bacnk account to confirm identity before continuing to vote. If the bank confirms identity of a person, he/she is allowed to vote or else they have to find a different method(physical vote).
 
-Things you may want to cover:
+Smart contracts are used and hashes are created from user's vote, some private information over a salt that is regenerated everytime, ensuring it' security
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The server only currently works in the the PSD2 sandbox environment provided by the organizers at the hackathon
