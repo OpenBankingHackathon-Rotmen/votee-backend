@@ -59,7 +59,8 @@ class FetchAccountInfoJob < ApplicationJob
 		    "token": "#{auth}",
 		    "isDirectPsu": true
 		  },
-		  "accountNumber": "#{acc}"
+		  "accountNumber": "#{acc}",
+		  "perPage": 20,
 		}
 	end
 end
