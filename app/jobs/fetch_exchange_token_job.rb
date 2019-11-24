@@ -1,3 +1,9 @@
+require 'openssl'
+require "base64"
+require 'simple_uuid'
+require 'net/http'
+require 'open3'
+
 class FetchExchangeTokenJob < ApplicationJob
   queue_as :default
 
@@ -44,43 +50,43 @@ class FetchExchangeTokenJob < ApplicationJob
 		puts "\nREQUEST EXCHANGE DEKHLO #{stdout}\n"
 		JSON.parse(stdout)["access_token"]
   end
+
+  def request code, uid
+		{
+		  "requestHeader": {
+		    "requestId": "#{uid}",
+		    "userAgent": "string",
+		    "ipAddress": "string",
+		   	"tppId": "PSDPL-KNF-1138278768",
+		    "isCompanyContext": true,
+		    "psuIdentifierType": "string",
+		    "psuIdentifierValue": "string",
+		    "psuContextIdentifierType": "string",
+		    "psuContextIdentifierValue": "string"
+		  },
+		  "grant_type": "exchange_token",
+		  "redirect_uri": "string",
+		  "client_id": "string",
+		  "refresh_token": "string",
+		  "exchange_token": "#{code}",
+		  "scope": "ais",
+		  "scope_details": {
+		    "privilegeList": [
+		      {
+		        "ais:getAccount": {
+	      			"scopeUsageLimit": "multiple"
+	      		}
+	      	}
+		    ],
+		    "scopeGroupType": "ais",
+		    "consentId": "#{uid}",
+		    "scopeTimeLimit": "2021-11-23T16:18:07.202Z",
+		    "throttlingPolicy": "psd2Regulatory"
+		  },
+		  "is_user_session": true,
+		  "user_ip": "string",
+		  "user_agent": "string"
+		}
+	end
 end
 
-def request code, uid
-	{
-	  "requestHeader": {
-	    "requestId": "#{uid}",
-	    "userAgent": "string",
-	    "ipAddress": "string",
-	    "sendDate": "2019-11-23T16:18:07.201Z",
-	    "tppId": "PSDPL-KNF-1138278768",
-	    "isCompanyContext": true,
-	    "psuIdentifierType": "string",
-	    "psuIdentifierValue": "string",
-	    "psuContextIdentifierType": "string",
-	    "psuContextIdentifierValue": "string"
-	  },
-	  "grant_type": "exchange_token",
-	  "redirect_uri": "string",
-	  "client_id": "string",
-	  "refresh_token": "string",
-	  "exchange_token": "#{code}",
-	  "scope": "ais",
-	  "scope_details": {
-	    "privilegeList": [
-	      {
-	        "ais-accounts:getAccounts": {
-          	"scopeUsageLimit": "multiple"
-					}
-      	}
-	    ],
-	    "scopeGroupType": "ais",
-	    "consentId": "#{uid}",
-	    "scopeTimeLimit": "2021-11-23T16:18:07.202Z",
-	    "throttlingPolicy": "psd2Regulatory"
-	  },
-	  "is_user_session": true,
-	  "user_ip": "string",
-	  "user_agent": "string"
-	}
-end
