@@ -32,7 +32,7 @@ class FetchAccountInfoJob < ApplicationJob
 		token = token.gsub(token.split('.')[1], "")
 
 	req = "curl --request POST \\
-	  --url https://api-obh.kir.pl/v2_1_1.1/accounts/v2_1_1.1/getTransactionsDone \\
+	  --url https://api-obh.kir.pl/v2_1_1.1/accounts/v2_1_1.1/getAccount \\
 	  --header 'Accept: application/json' \\
 	  --header 'Accept-Charset: utf-8' \\
 	  --header 'Content-Type: application/json' \\
@@ -59,8 +59,7 @@ class FetchAccountInfoJob < ApplicationJob
 		    "token": "#{auth}",
 		    "isDirectPsu": true
 		  },
-		  "accountNumber": "#{acc}",
-		  "perPage": 20,
+		  "accountNumber": "#{acc}"
 		}
 	end
 end
