@@ -90,44 +90,4 @@ class FetchTokenJob < ApplicationJob
 		  "user_agent": "string"
 		}
 	end
-
-	def request2 code, uid
-		{
-		  "requestHeader": {
-		    "requestId": "#{uid}",
-		    "userAgent": "string",
-		    "ipAddress": "string",
-		    "sendDate": "2019-11-23T16:18:07.201Z",
-		    "tppId": "PSDPL-KNF-1138278768",
-		    "isCompanyContext": true,
-		    "psuIdentifierType": "string",
-		    "psuIdentifierValue": "string",
-		    "psuContextIdentifierType": "string",
-		    "psuContextIdentifierValue": "string"
-		  },
-		  "grant_type": "exchange_token",
-		  "Code": "#{code}",
-		  "redirect_uri": "string",
-		  "client_id": "string",
-		  "refresh_token": "string",
-		  "exchange_token": "#{code}",
-		  "scope": "ais",
-		  "scope_details": {
-		    "privilegeList": [
-		      {
-		        "ais:getAccount": {
-          		"scopeUsageLimit": "single"
-          	}
-        	}
-		    ],
-		    "scopeGroupType": "ais",
-		    "consentId": "#{uid}",
-		    "scopeTimeLimit": "2020-11-23T16:18:07.202Z",
-		    "throttlingPolicy": "psd2Regulatory"
-		  },
-		  "is_user_session": true,
-		  "user_ip": "string",
-		  "user_agent": "string"
-		}
-	end
 end
