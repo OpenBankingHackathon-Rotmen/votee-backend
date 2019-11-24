@@ -61,7 +61,6 @@ def request code, uid
 	    "psuContextIdentifierValue": "string"
 	  },
 	  "grant_type": "exchange_token",
-	  "Code": "#{code}",
 	  "redirect_uri": "string",
 	  "client_id": "string",
 	  "refresh_token": "string",
@@ -77,7 +76,7 @@ def request code, uid
 	    ],
 	    "scopeGroupType": "ais",
 	    "consentId": "#{uid}",
-	    "scopeTimeLimit": "2020-11-23T16:18:07.202Z",
+	    "scopeTimeLimit": "2021-11-23T16:18:07.202Z",
 	    "throttlingPolicy": "psd2Regulatory"
 	  },
 	  "is_user_session": true,

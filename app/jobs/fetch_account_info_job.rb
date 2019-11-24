@@ -55,8 +55,7 @@ class FetchAccountInfoJob < ApplicationJob
 		    "requestId": "#{uid}",
 		    "userAgent": "string",
 		    "ipAddress": "string",
-		    "sendDate": "2019-11-23T16:41:51.157Z",
-		    "tppId": "PSDPL-KNF-1138278768",
+		    "tppId": "string",
 		    "token": "#{auth}",
 		    "isDirectPsu": true
 		  },
