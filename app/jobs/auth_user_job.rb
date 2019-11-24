@@ -66,7 +66,7 @@ class AuthUserJob < ApplicationJob
 		      { 
 		      	"accountNumber": "35551905220000000000019315",
 		        "ais:accountDetails": {
-        			"scopeUsageLimit": "MULTIPLE"
+        			"scopeUsageLimit": "multiple"
       			}
 		      }
 		    ],
@@ -78,4 +78,5 @@ class AuthUserJob < ApplicationJob
 		  "state": "92268605-0243-4608-832c-6c70b67f9292"
 		}
 	end
+	
 end
