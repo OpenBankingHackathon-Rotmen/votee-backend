@@ -15,6 +15,6 @@ class AccountsController < ApplicationController
 
 		puts "YE WALI DELHO #{a}"
 		puts "ACCOUNT: #{acc_number}\nTOKEN_NEW: #{auth}\n"
-		puts "nTOKEN_OLD: params["token"]\n"
+		puts "nTOKEN_OLD: #{params["token"]}\n"
 	end
 end
