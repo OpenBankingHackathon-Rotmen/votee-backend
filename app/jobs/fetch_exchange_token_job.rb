@@ -68,6 +68,20 @@ class FetchExchangeTokenJob < ApplicationJob
 		  "redirect_uri": "string",
 		  "client_id": "string",
 		  "exchange_token": "#{code}",
+		  "scope": "ais",
+		  "scope_details": {
+		    "privilegeList": [
+		      {
+		        "ais:getAccount": {
+	      			"scopeUsageLimit": "single"
+	      		}
+	      	}
+		    ],
+		    "scopeGroupType": "ais",
+		    "consentId": "#{uid}",
+		    "scopeTimeLimit": "2021-11-23T16:18:07.202Z",
+		    "throttlingPolicy": "psd2Regulatory"
+		  },
 		  "is_user_session": true,
 		  "user_ip": "string",
 		  "user_agent": "string"
