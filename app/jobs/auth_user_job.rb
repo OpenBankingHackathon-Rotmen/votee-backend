@@ -32,7 +32,6 @@ class AuthUserJob < ApplicationJob
 		json = Base64.decode64(token.split('.')[1])
 		token = token.gsub(token.split('.')[1], "")
 
-
 		req = "curl --request POST \\
 		  --url https://api-obh.kir.pl/v2_1_1.1/auth/v2_1_1.1/authorize \\
 		  --header 'Accept: application/json' \\
@@ -47,7 +46,7 @@ class AuthUserJob < ApplicationJob
 		  --insecure
 		"
 	  stdout, stderr, status = Open3.capture3(req)
-	  puts stdout
+	  puts "\n\n\n\n\nYELO LELO BHAIYYA JEEEE #{stdout}"
 	  JSON.parse(stdout)["aspspRedirectUri"]
   end
 
@@ -66,7 +65,7 @@ class AuthUserJob < ApplicationJob
 		      { 
 		      	"accountNumber": "35551905220000000000019315",
 		        "ais:getAccount": {
-          		"scopeUsageLimit": "single"
+          		"scopeUsageLimit": "multiple"
         		},
 		        "ais:getAccount": {
 		          "scopeUsageLimit": "single"
